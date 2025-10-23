@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Renter Information Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    main {
+      max-width: 600px;
+      margin: 40px 20px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    fieldset {
+      border: none;
+      padding: 0;
+      margin: 0 0 20px;
+    }
+
+    label {
+      font-weight: bold;
+      margin-top: 10px;
+      display: block;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    button {
+      background-color: #5cb85c;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #4cae4c;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Renter Information Form</h1>
+    <form action="/submit_renter_info" method="post" aria-label="Renter Information">
+      <fieldset>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="budget">Budget ($):</label>
+        <input type="number" id="budget" name="budget" step="0.01" required />
+
+        <label for="preferred_location">Preferred Location:</label>
+        <textarea id="preferred_location" name="preferred_location" rows="3" required></textarea>
+
+        <label for="move_in_date">Move-in Date:</label>
+        <input type="date" id="move_in_date" name="move_in_date" required />
+      </fieldset>
+      <button type="submit">Submit</button>
+    </form>
+  </main>
+</body>
+</html>
